@@ -1,0 +1,298 @@
+\title{A preliminary investigation into gravitational wave observations using the International Deployment of Accelerometers}
+%\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+
+
+\author{
+%Ray Abma\footnotemark[1]
+Ray Abma
+}
+\maketitle
+
+%\lefthead{Abma}
+%\righthead{GW detection using the IDA}
+
+\address{
+\footnotemark[1] Bureau of Economic Geology \\
+John A. and Katherine G. Jackson School of Geosciences \\
+The University of Texas at Austin \\
+University Station, Box X \\
+Austin, TX 78713-8924, USA \\
+ray.abma@gmail.com 
+}
+
+
+\maketitle
+
+\righthead{GW detection using the IDA}
+\lefthead{Abma}
+\footer{TCCS-19}
+
+\begin{abstract}
+This paper presents the results of an effort to detect low-frequency gravitational waves using International Deployment of Accelerometers (IDA) data from 1984 to 1987.
+The earth acts as a large gravitational wave antenna 
+with the IDA stations distributed over the surface.  The records are a year long, that is, 1.6 million samples.  
+This provides good noise attenuation.  
+The very small frequency increment, $3x10^{-8}$, provides good noise separation for continuous sources.
+Possible signals were found for the binary star systems J0806.3+1527, J1914.4+2456, J23222+2057, J0651+2844, and J1539932+502738.8.  There is some uncertainty in these identifications since there appears to be a large number of gravitational wave sources.  
+While the uncertainty of the period due to the resolution of the Fourier transform was about 0.00015 minutes for J0806 and about 0.00017 minutes for J1914, the actual uncertainty is likely to be larger because of the pre-GPS timings of the seismic data.  
+Scanning the data for signals not previously predicted shows many possible sources.  
+While some of these apparent sources are likely noise artifacts, many of the sources appear to form a pattern that reflects the plane of the Milky Way, 
+suggesting that there are a large number of these sources, and that they are not local.  
+There are some uncertainties involved in the detections of these gravitational wave sources, mainly due to the acquisition footprint from the sparse receiver distribution and the response of the earth and the detectors.  
+\end{abstract}
+
+\inputdir{./}
+
+\section{Introduction}
+\inputdir{check}
+
+The existence of gravitational waves has now been confirmed indirectly by \citet{1975ApJ} and confirmed with direct detections using the LIGO and Virgo detectors \citep{PhysRevLett.119.161101}.
+Freeman Dyson (\citeyear{dyson}) 
+suggested that the earth might be used as a large antenna for detecting gravitational waves
+ provided that data were recorded over a long enough time. 
+Several year-long records from the International Deployment of Accelerometers (IDA) are used here 
+in an attempt to extract such signals.
+There are 1.6 million samples in each of the available year-long records,
+allowing noise at any one frequency to be effectively canceled out.
+The small frequency sample increment, $3x10^{-8}$ Hz, provides a 
+high resolution frequency
+separation of continuous sources.
+
+Possible gravitational wave signals of five binary star systems that were predicted to be strong sources are addressed here, J0806.3+1527, J1914.4+2456, J23222+2057, J0651+2844, and J1539932+502738.8.
+ Two of these sources are 
+the binary star systems J0806.3+1527 and J1914.4+2456, hereafter J0806 and J1914, as described by 
+Israel et al. (\citeyear{Israel}) 
+and Esposito et al. (\citeyear{swift}).
+J23222+2057, J0651+2844, and J1539932+502738.8 are other binary systems that should be significantly strong sources.
+J0806, in particular, is expected to be a strong source of gravitational waves because of its very short orbital period.
+The original examination of the IDA data was done in Abma (\citeyear{raya1}) in a somewhat simple manner, and no indications of gravitational wave signals were found at the time. 
+Examining these data using a more computationally intensive method provides a more sensitive method of searching for signals.
+In this case, the IDA data extending over a year were matched with a set of weights that would match possible gravitational wave signals for a range of polarities.  These weighted signals were Fourier transformed and then examined for a fit to the expected responses to gravitational waves by examining the response at a single frequency.  This processing sequence assumes each signal has a very constant frequency.
+
+Signals consistent with the responses expected from gravitational waves were detected from J0806 and J1914.  
+These appear to be white dwarf binary systems, or perhaps a white dwarf-neutron star binary in the case of J1914 (Strohmayer, \citeyear{Strohmayer}, Esposito et al., \citeyear{swift}).  
+The signal periods from these systems were found to be 5.35419 and 9.48206  minutes respectively, with a resolution of the Fourier transform of the year-long seismic trace generating uncertainties in the periods of about 0.00015 minutes for J0806 and about 0.00017 minutes for J1914. The true uncertainty is likely to be larger since the seismic data may have some drift in the actual time of the samples. 
+
+
+A description of the analysis and the results targeting possible signals from these binary systems will be shown here.
+These results are then extended into scanning for sources not previously predicted.
+
+
+%Review, claim, agenda
+
+
+
+\section{Method}
+
+
+The International Deployment of Accelerometers (IDA) is made up of a network of seismic receivers distributed around the world, as shown in Figure~\ref{fig:world} for 1987. 
+These accelerometers are sensitive to low frequencies, making the network useful in studying low frequency
+phenomena.  Beroza and Jordan (\citeyear{Beroza2}) used the data considered here for a study of slow earthquakes.  
+When attempting to detect gravitational waves, signals such as earthquakes are considered noise.
+Beroza and his students edited out the strongest noises, which were generally instrument glitches
+and strong earthquakes.
+While the original analysis of the data used additional processes to further reduce further noise, the results here were
+obtained with the raw data with only the edits from Beroza and his students.  
+Stations near coastlines were particularly noisy, apparently from wave action, so these stations were not used in the analysis in this paper, 
+although it is not clear that removing them was necessary.   
+Removing these stations made the contribution of the northern hemisphere's stations more significant.  
+The IDA data recorded were arranged into records made up of
+single continuous traces for each station with a length of one year and a sample interval of 20 seconds.  The preliminary processing is further explained in Abma (\citeyear{raya1}).
+  
+\plot{world}{width=0.95\textwidth}{
+The distribution of IDA receivers in 1987.}
+  
+The following processing flow was used to detect possible gravitational waves:
+A correction was applied to each year of data by applying a time shift so that all the data could be displayed referencing the same place in the sky, 
+that is, 
+a  correction for the time of the Vernal Equinox.  
+In this paper, the position of astronomical objects are expressed as latitude and longitude for simplicity.  
+Each station's signals were correlated with the expected gravitational wave signals 
+for a grid of 31 latitudes, 61 longitudes, and a range of 16 polarities.  
+The Fourier transform of these correlated records for the entire year
+gives a frequency increment of 3.170979 x 10\textsuperscript{-8} Hz.
+The resulting data were then merged into blocks with a limited frequency range 
+for convenience in processing.  
+For each frequency,
+the polarity with the largest amplitude was taken as the most likely signal. 
+An example of two expected gravitational wave polarities is shown in Figure~\ref{fig:polarities}, 
+showing the expected displacement of the earth perpendicular to the direction of the gravitational wave travel.  
+While two polarities might have been used to establish the polarity of the signal,
+scanning over 16 polarities seemed a better option in the presence of significant noise.
+These 16 polarities would be scanned at intermediate angles to those shown in Figure~\ref{fig:polarities}, that is, 
+instead of the two polarities shown in Figure~\ref{fig:polarities} separated by 45 degrees, a larger number of angles would be scanned.  The sparse distribution of the IDA stations is likely to affect the maximum polarity found, especially on the earlier years where the IDA stations appear somewhat noisier, giving some uncertainty to the calculated polarity.  
+The direction to the source is ambiguous in that the same response would be obtained from 
+a wave traveling in the opposite direction.  
+The movement of the earth is assumed to be very simple, and just a local movement is assumed without considering any large-scale linkage between local areas.  
+
+\plot{polarities}{width=0.35\textwidth}{
+The expected displacement of the earth perpendicular to the direction of the gravitational wave travel.}
+
+
+\section{The J0806 binary star system gravitational wave response}
+
+ J0806 appears to be a binary star system made up of two white dwarf stars with an orbital period of 321.5 seconds, or one orbit every 5.4 minutes.  
+ Since the orbital period is very small, this system is expected to generate strong gravitational waves.  
+ This system generates the strongest predicted gravitational waves presently known. 
+The data from one frequency from the 1987 data is shown in Figure~\ref{fig:J0806-87-harm2-resp}.
+This shows the response at a frequency that is close to that expected from J0806's orbital period, with  the source response plotted in a Mercator-like projection.  
+This projection was used for convenience in displaying the response.
+  
+\plot{J0806-87-harm2-resp}{width=0.95\textwidth}{
+The response of J0806 in 1987.  The two maxima in the central plot, indicated by the red areas in the upper right and lower left, 
+reflect the ambiguity of the two possible directions of the gravitational wave signal.}
+
+The resolution of the location J0806 is poor in Figure~\ref{fig:J0806-87-harm2-resp},
+ and while the latitude of the peak amplitude of the measured response is roughly consistent with the known location of J0806, the longitude is significantly off.
+The latitude difference may be an issue of the acquisition footprint, since most of the receivers cluster around the equator. This will tend to produce a stronger signal at the higher latitude and shift the center of the responses north and south.  Once again, there is an ambiguity in the direction in the gravitational wave signal since a wave traveling in the opposite direction will create the same signal.  This gives two amplitude peaks separated by 180 degrees in longitude and having symmetrical latitude positions.  Note that the central plot in Figure~\ref{fig:J0806-87-harm2-resp} has high symmetry, while the other plots, showing the response at 3.170979 x 10\textsuperscript{-8} Hz above and below the central plot, do not have the same strength or symmetry.
+There are no obvious harmonics of the J0806 signal, suggesting that the orbits are 
+close to circular (Maggiore, \citeyear{Maggiore}).
+
+The responses of these signals should be consistent over the years analyzed, and it seems unlikely that they will change quickly with frequency, 
+especially at the low frequencies considered here.  The plots of the response of J0806 was relatively stable from 1985 to 1987, although the 1984 response was poor.  All of the responses from 1984 shared the same poor responses.  This may indicate some problem with the newly installed detectors.  The responses from 1985 and 1986 were poorer than the 1987 responses, indicating an improvement in the reliability of the stations with time.  
+
+
+\section{The J1914 binary star system gravitational wave response}
+
+Source J1914 is another binary system which may be two white dwarf stars or a white dwarf star and a neutron star.  
+The orbital period of this system is expected to be about 569 seconds, 
+or about 9.5 minutes.
+While this is expected to generate weaker gravitational waves than J0806,
+J1914 was the next strongest expected gravitational wave source  source from a binary star system.
+
+\plot{J1914-87-harm2-resp}{width=0.95\textwidth}{
+The response of J1914 in 1987 in the center plot with the responses at one frequency step above and below the expected frequency.  }
+
+
+The gravitational wave signal period for this system was found to be 9.48206 minutes, plus or minus 0.000171 minutes.
+Figure~\ref{fig:J1914-87-harm2-resp} shows the response at the 9.48190 minute period.
+The response of J1914 in Figure~\ref{fig:J1914-87-harm2-resp} shows a comparison of the signal at the most likely frequency  to those at one frequency step above and below the given frequency.
+Once again,  the  response shows a significant change of character one frequency step away, suggesting that this response is not an artifact.  
+
+
+
+\section{Other sources}
+
+Short-period binary star systems are expected to generate significant gravitational waves, especially those with orbital periods of a few minutes.  There is a fairly narrow range of frequencies between about 0.03 and 0.1 Hz between the infragravity wave noise and the microseismic noise peak.  The noise level in this range may be as much as 50 dB below the noise outside of it.  This limits the expected binary sources that can be detected with seismic sensors.  The gravitational wave responses of binary systems J23222+2057, J0651+2844, and J1539932+502738.8 are shown in Figures~\ref{fig:J2322-87-harm2-resp},~\ref{fig:J0651-87-harm2-resp}, and~\ref{fig:J1539-87-harm2-resp}.
+ 
+
+\plot[h]{J2322-87-harm2-resp}{width=0.95\textwidth}{
+The response of J2322 in 1987 in the center plot with the responses at one frequency step above and below the expected frequency.  }
+
+
+\plot[h]{J0651-87-harm2-resp}{width=0.95\textwidth}{
+The response of J0651 in 1987 in the center plot with the responses at one frequency step above and below the expected frequency.  }
+
+
+\plot[h]{J1539-87-harm2-resp}{width=0.95\textwidth}{
+The response of J1539 in 1987 in the center plot with the responses at one frequency step above and below the expected frequency.  }
+
+Because of the many similar responses that appear with the same symmetries as those for J0806.3+1527, J1914.4+2456, J23222+2057, J0651+2844, and J1539932+502738.8, there is some uncertainty in the identification of these sources with their gravitational wave responses.  Also, only the second harmonic will appear for a binary star system with a circular orbit.
+Nevertheless, a  binary star system with a significant eccentricity will generate more harmonics, generating more gravitational wave responses at different frequencies.
+
+The shape of a non-circular orbit, that is, an elliptical orbit, is defined using the eccentricity e, where the semi-major and semi-minor axes of the 
+ellipse are 
+\begin{equation*}
+a = \frac{R}{1-e^2}
+\end{equation*}
+and
+\begin{equation*}
+b = \frac{R}{(1-e^2)^\frac{1}{2}}
+\end{equation*}
+where $R$ is a scale factor setting the values $a$ and $b$ for a particular eccentricity.
+
+The gravitational wave energy will be spread over more harmonics as the orbital eccentricities increase, as can be seen for an orbital eccentricity of 0.0 in Figure~\ref{fig:harmonics-0.0}, 0.2 in Figure~\ref{fig:harmonics-0.2}, and 0.5 in Figure~\ref{fig:harmonics-0.5}.  Note that higher orbital eccentricities produce more total energy in gravitational waves \citep{Barone}.  This may generate gravitational wave responses at several frequencies for one source, creating uncertainty in the actual orbital period and in the identification of individual sources.  
+
+\multiplot{1}{harmonics-0.0,harmonics-0.2,harmonics-0.5}{width=0.55\textwidth}{(a) shows the luminosity of the harmonics with an orbital eccentricity of 0.0, (b) shows the harmonics with an orbital eccentricity of 0.2, (c) shows the harmonics with an orbital eccentricity of 0.5.}
+
+
+As a check for gravitational wave sources not previously predicted, the data for a range of frequencies was scanned
+for possible source signals.
+Each frequency in a range of 10000 frequency samples was scanned for the best correlations with synthetic gravity wave signals.  The strongest polarity was then saved for that frequency along with the coordinates of the strongest correlation response.  The best 1200 correlations from the 10000 frequency samples were  plotted here.  This was repeated for 77 blocks of 10000 frequency samples starting at 0 Hz to Nyquist.    Figure~\ref{fig:Plot-Block-50000-1200-Coord-1987-color} shows the source coordinates of 1200 sources with periods between 10.512 to 8.750 minutes.
+Figure~\ref{fig:Plot-Block-50000-1200-Coord-1987-color} shows a pattern that is similar to the form of the Milky Way. 
+For distant events lying within the plane of the galaxy, this pattern would be expected.  As with the responses of the individual sources, the direction of the source is ambiguous since the waves would show this pattern superimposed on its mirror image, which is still in the plane of the Milky Way.   The pattern in Figure~\ref{fig:Plot-Block-50000-1200-Coord-1987-color} is not perfectly symmetrical due to the pattern of the positions of the receivers, the acquisition footprint.
+
+\plot[h]{Plot-Block-50000-1200-Coord-1987-color}{width=1.1\textwidth}{  
+Possible sources with periods between 10.512 to 8.750 minutes.  The color indicates the number of sources at a position.}
+
+Many of the plots over other frequency ranges show similar patterns as Figure~\ref{fig:Plot-Block-50000-1200-Coord-1987-color},  but many of the very high and low frequencies do not show this pattern.  These have a more uniform distribution of apparent sources, which would be expected if they were caused by noise.  
+
+The number of sources is somewhat lower along the equator, that is, latitude 0.0 on Figure~\ref{fig:Plot-Block-50000-1200-Coord-1987-color}.  This is likely due to the acquisition footprint of the detectors.  The detectors are denser along the population centers at the lower latitudes and sparser at the higher latitudes.  With the responses of gravitational waves shown in Figure~\ref{fig:polarities}, the array of sources will be most sensitive to sources at the highest latitudes in both the northern and southern hemispheres and least sensitive to sources above the equator.  
+
+The pattern seen in Figure~\ref{fig:Plot-Block-50000-1200-Coord-1987-color}  is not obviously the result of an acquisition footprint from the distribution of the IDA detectors, and an acquisition footprint diagnostic did not show this pattern.    
+If the sources in Figure~\ref{fig:Plot-Block-50000-1200-Coord-1987-color} and the other frequency ranges are real, this indicates the existence of a large number of binary star systems generating gravitational waves.  
+This would be consistent with estimates made by Shah et al. (\citeyear{Shah_2015}), suggesting there are a large number of binary systems in the galaxy.  
+It seems unlikely that all these signals are due to noise, although some of these signals may be multiple harmonics of a single source. 
+
+
+\section{Discussion}
+
+The consistency of the gravitational wave responses between three years is a strong argument for the reality of the gravitational wave signal from J0806, although the distribution of the stations, especially for the sparse distribution of the IDA stations, is expected to significantly affect the computed responses.  
+J1914 shows less consistency between 1987 and 1986 or 1985, but it shows three possible harmonics in the 1987 IDA data.
+
+More recent IDA data have more stations available, and the more modern data should be inspected for similar signals.  In particular, individual sources in Figure~\ref{fig:Plot-Block-50000-1200-Coord-1987-color} should be examined for other indications that they are gravitational wave signals, in particular, their consistency over time, the existence of higher harmonics, and the change in the source frequency produced by reduced orbital periods caused by gravitational wave radiation.  
+The sources found in 1987 are expected to show some change in frequency when compared to 2019 data, especially for the short period sources.  
+
+Presently, the locations of the sources have been obtained by finding the maximum of the response of the data.  
+A better approach might be to use a 2-D deconvolution to get a more
+focused position. This is likely to require a denser grid of latitudes and longitudes to be calculated, increasing the cost of
+an already computationally intensive process.
+While the computational effort increases with the number of response points calculated, it might be worthwhile to calculate more points to make the source positions more accurate. 
+
+There are significant uncertainties in these observations. The signals are very weak, although the observation times are long.  
+Some of the observed effects may be artifacts, although some signals are consistent from 1985 to 1987.  
+The positions of the sources may be distorted by the acquisition footprint, that is, the effects of having a sparse set of detectors. 
+This effect might mainly effect the estimated latitudes, pushing the source locations away from the equator.  
+The responses of the earth and of the receivers is expected to mainly affect the longitude of the source positions.  
+Matching the known sources to the detected sources may be uncertain since there are a significant number of detected sources.  
+Nevertheless, it is difficult to explain the pattern seen in Figure~\ref{fig:Plot-Block-50000-1200-Coord-1987-color} as anything but real gravitational wave sources.  
+ 
+As suggested by Dyson (\citeyear{dyson}), the response of a gravitational wave might be useful in learning the large-scale structure of the earth.  Learning how the earth responds to a gravitational wave might also improve the estimated positions of the sources.  While, ideally, higher frequencies than those seen here would be better for probing the earth's structure, the lower frequencies might still provide some information.  A space-based gravitational wave detector, such as the proposed LISA detector, would be useful in extracting undistorted signals that could be used to determine the earth's response and give useful information on the earth's structure. 
+
+
+\section{Future work}
+
+There are some obvious ways of making these observations more convincing.  One is to repeat the observations from the 1987 IDA array on the newer IRIS arrays.  Work using some of the 2019 IRIS data is progressing, although the newer data is larger and will take significantly more computer time.  One possibility of comparing the 2019 results with those from 1987 may be to measure the change in orbital periods caused by the energy lost by gravitational waves over the 33 years.
+
+Corrections for the Roemer effect, that is, correcting for the earth's position in its orbit, should be applied.  While the Doppler effect is small, a correction for it should be applied since the frequency interval is very small.  The program used to scan for sources should be examined for opportunities to lower the cost, since it now takes several weeks to analyze the 1987 year of seismic data, and the 2019 dataset is much larger.    
+
+Another task is to calculate and remove the acquisition footprint.  The weighting of the signals due to the positions of the detectors should be fairly straightforward to calculate and to correct.
+
+As mentioned above, a finer grid of source latitude and longitudes should improve the estimated locations of the sources.  Also as mentioned above, examining the individual sources in  Figure~\ref{fig:Plot-Block-50000-1200-Coord-1987-colorr}  for year-to-year consistency would be useful.  Scanning the sources for higher harmonics would give an indication of the orbital configurations of the source.  In particular, sources at the center of the galaxy might be especially interesting.
+
+
+\section{Conclusions}
+
+It appears that gravitational waves may be detected using the International Deployment of Accelerometers (IDA).  
+The signals from the J0806 source are consistent over time and appear to be real.  
+There is some uncertainty in matching expected gravitational wave sources to the periods derived from X-ray telescope observations, since there may be many such signals within the uncertainty in the frequency range determined from the X-ray telescopes.  
+The strongest gravitational wave signals may come from binary systems with an orbital plane perpendicular to the direction to the earth since there is significant directionality in the gravitational waves.  
+With an orbital plane perpendicular to the direction to the earth, the orbital periods may be difficult to ascertain accurately from X-ray telescope measurements.
+This may make matches based on signal frequency questionable if several sources have the same approximate direction and period.   
+There may also be some uncertainty in the timing of the gravitational waves from the 1987 data since GPS timing was unavailable at that time.   
+
+The pattern seen in Figure~\ref{fig:Plot-Block-50000-1200-Coord-1987-color} seems to indicate a distribution of binary star gravitational wave sources that may lie in the plane of the galaxy.  It also suggests that there are many such sources, although this number of sources is not entirely unexpected. 
+
+The use of the IDA array allows us to see a new portion of the gravitational wave spectrum.  This low frequency part of the gravitational wave spectrum will allow us to learn something about short period binary star systems and their distribution within the galaxy.  It also may allow detection of binary star systems or large black holes with companions at  greater distances.  
+It is possible that we could learn more about the large-scale structure of the earth using gravitational waves as a probe using a method similar to full-waveform inversion.  
+
+
+\section{Acknowledgments}
+
+I would like to thank Jon Claerbout and the sponsors of the Stanford Exploration project for supporting this somewhat unconventional project.  I am grateful for Greg Beroza's kind assistance in providing the original data and for his help in reformatting it into a form that was suitable for processing.  
+I would also like to thank Sergey Fomel and the sponsors of the Texas Consortium for Seismic Computation for providing a place to perform this research at the University of Texas.
+The International Deployment of Accelerometers collected the data used here.
+ 
+ 
+
+
+
+
+
+
+\onecolumn
+\bibliographystyle{seg}
+%\bibliography{eikodsf}
+\bibliography{GW}
+
